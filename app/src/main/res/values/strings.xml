@@ -10,4 +10,37 @@
     <string name="title_personal_information">Personal Information</string>
     <string name="hint_lastname">Lastname</string>
     <string name="hint_firstname">Firstname</string>
+    <string name="title_education">Education</string>
+    <string name="hint_school_name">School</string>
+    <string name="hint_year_attended">Year Attended</string>
+    <string name="hint_degree_received">Degree Received</string>
+    <string name="hint_major">Major</string>
+    <string name="hint_address">Address</string>
+    <string name="but_next">Next</string>
+    <string name="title_employment">Employment</string>
+    <string name="hint_employer">Employer</string>
+    <string name="hint_date_employed">Date Employed</string>
+    <string name="hint_work_phone">Work Phone</string>
+    <string name="hint_pay_rate">Pay Rate</string>
+    <string name="hint_to">To</string>
+    <string name="hint_city">City</string>
+    <string name="hint_position">Position</string>
+    <string name="hint_duties_performed">Duties Performed</string>
+    <string name="hint_supervisor">Supervisor Name and Title</string>
+    <string name="hint_reason_leaving">Reason for Leaving</string>
+    <string name="hint_contact_them">May we contact them?</string>
+    <string name="but_add_education">Add</string>
+
+    <string-array name="position_list">
+        <item>Android/ Mobile Dev</item>
+        <item>Web Dev</item>
+        <item>FullStack Web Dev</item>
+        <item>FullStack Software Dev</item>
+        <item>UI Designer</item>
+        <item>QA Engineer</item>
+        <item>Technical Support Engineer</item>
+        <item>IT Specialist</item>
+        <item>DB Administrator</item>
+        <item>DB Support</item>
+    </string-array>
 </resources>

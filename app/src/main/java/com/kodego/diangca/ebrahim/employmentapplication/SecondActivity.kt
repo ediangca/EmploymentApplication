@@ -1,17 +1,23 @@
 package com.kodego.diangca.ebrahim.employmentapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import com.google.android.material.internal.CheckableGroup
 import com.kodego.diangca.ebrahim.employmentapplication.databinding.ActivityMainBinding
 import com.kodego.diangca.ebrahim.employmentapplication.databinding.ActivitySecondBinding
+import java.text.SimpleDateFormat
 
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySecondBinding
 
+    private lateinit var mainActivity: AppCompatActivity
+
+    private final var MAININFO = "MAININFO"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +26,16 @@ class SecondActivity : AppCompatActivity() {
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        binding.btnProceed2.setOnClickListener {
+
+            var nextForm = Intent(this, ThirdActivity::class.java)
+
+
+            startActivity(Intent(nextForm))
+
+            finish()
+        }
 
     }
 
@@ -30,9 +46,9 @@ class SecondActivity : AppCompatActivity() {
             when (view.id) {
                 R.id.citizenYes -> {
                     if (checked) {
-                        binding.citizenYes.isChecked = true
-                        binding.citizenNo.isChecked = false
-                    }else{
+                        binding.citizenNo.isChecked = true
+                        binding.citizenYes.isChecked = false
+                    } else {
                         binding.citizenYes.isChecked = true
                         binding.citizenNo.isChecked = false
                     }
@@ -41,7 +57,7 @@ class SecondActivity : AppCompatActivity() {
                     if (checked) {
                         binding.citizenNo.isChecked = true
                         binding.citizenYes.isChecked = false
-                    }else{
+                    } else {
                         binding.citizenYes.isChecked = true
                         binding.citizenNo.isChecked = false
                     }
@@ -51,7 +67,7 @@ class SecondActivity : AppCompatActivity() {
                     if (checked) {
                         binding.felonyYes.isChecked = true
                         binding.felonyNo.isChecked = false
-                    }else{
+                    } else {
                         binding.felonyYes.isChecked = true
                         binding.felonyNo.isChecked = false
                     }
@@ -60,7 +76,7 @@ class SecondActivity : AppCompatActivity() {
                     if (checked) {
                         binding.felonyNo.isChecked = true
                         binding.felonyYes.isChecked = false
-                    }else{
+                    } else {
                         binding.felonyNo.isChecked = true
                         binding.felonyYes.isChecked = false
                     }
@@ -70,7 +86,7 @@ class SecondActivity : AppCompatActivity() {
                     if (checked) {
                         binding.adikYes.isChecked = true
                         binding.adikNo.isChecked = false
-                    }else{
+                    } else {
                         binding.adikYes.isChecked = true
                         binding.adikNo.isChecked = false
                     }
@@ -80,7 +96,7 @@ class SecondActivity : AppCompatActivity() {
                     if (checked) {
                         binding.adikNo.isChecked = true
                         binding.adikYes.isChecked = false
-                    }else{
+                    } else {
                         binding.adikNo.isChecked = true
                         binding.adikYes.isChecked = false
                     }
@@ -90,5 +106,6 @@ class SecondActivity : AppCompatActivity() {
         }
 
     }
+
 
 }
