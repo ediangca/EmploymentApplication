@@ -1,5 +1,6 @@
 package com.kodego.diangca.ebrahim.employmentapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,15 @@ class ForthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityForthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnNext.setOnClickListener {
+
+            var nextForm = Intent(this, FifthActivity::class.java)
+
+            startActivity(Intent(nextForm))
+
+            finish()
+        }
 
     }
 

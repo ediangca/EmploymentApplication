@@ -3,25 +3,18 @@ package com.kodego.diangca.ebrahim.employmentapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.CheckBox
-import com.google.android.material.internal.CheckableGroup
-import com.kodego.diangca.ebrahim.employmentapplication.databinding.ActivityMainBinding
 import com.kodego.diangca.ebrahim.employmentapplication.databinding.ActivitySecondBinding
-import java.text.SimpleDateFormat
 
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySecondBinding
 
-    private lateinit var mainActivity: AppCompatActivity
-
     private final var MAININFO = "MAININFO"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
 
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -30,7 +23,6 @@ class SecondActivity : AppCompatActivity() {
         binding.btnProceed2.setOnClickListener {
 
             var nextForm = Intent(this, ThirdActivity::class.java)
-
 
             startActivity(Intent(nextForm))
 
@@ -46,8 +38,8 @@ class SecondActivity : AppCompatActivity() {
             when (view.id) {
                 R.id.citizenYes -> {
                     if (checked) {
-                        binding.citizenNo.isChecked = true
-                        binding.citizenYes.isChecked = false
+                        binding.citizenYes.isChecked = true
+                        binding.citizenNo.isChecked = false
                     } else {
                         binding.citizenYes.isChecked = true
                         binding.citizenNo.isChecked = false

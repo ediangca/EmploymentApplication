@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="15dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -41,11 +41,18 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/position_list"
+            android:padding="10dp"
+            android:id="@+id/positionList"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:endIconMode="clear_text">
+            app:endIconMode="none">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -55,6 +62,7 @@
                 android:hint="@string/hint_position_applying_for"
                 android:maxLines="1"
                 android:textSize="12sp"
+                android:editable="false"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -98,6 +106,7 @@
         <Button
             android:id="@+id/btnProceed"
             android:layout_width="wrap_content"
+            android:background="@drawable/common_button"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"s
             android:layout_gravity="center_horizontal"

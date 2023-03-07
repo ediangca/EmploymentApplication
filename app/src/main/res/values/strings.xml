@@ -30,17 +30,34 @@
     <string name="hint_reason_leaving">Reason for Leaving</string>
     <string name="hint_contact_them">May we contact them?</string>
     <string name="but_add_education">Add</string>
+    <string name="title_references">References</string>
+    <string name="hint_name_references">Name</string>
+    <string name="hint_title_references">Title</string>
+    <string name="hint_references_company">Company</string>
+    <string name="hint_references_phone">Phone</string>
+    <string name="hint_certify">I certify that all answers given herein are true and complete to the best of my knowledge.</string>
+    <string name="hint_authorize">I authorize investigation of all statements contained in this application of the employment as may be necessary in arriving at an employment decision.</string>
+    <string name="hint_event">In the event of employment, I understand the false or misleading information given in my application or interview(s) may result in discharge.</string>
+    <string name="lblSignature">Signature</string>
+    <string name="copyright">@2023 Copyright KodeGO Employment Application</string>
+    <string name="but_browse_sign">Browse</string>
+    <string name="title_education_background">List of Education Background</string>
+    <string name="but_edit_education">Edit</string>
+    <string name="but_remove_education">Remove</string>
+    <string name="hint_others">Others</string>
 
     <string-array name="position_list">
-        <item>Android/ Mobile Dev</item>
-        <item>Web Dev</item>
-        <item>FullStack Web Dev</item>
-        <item>FullStack Software Dev</item>
-        <item>UI Designer</item>
-        <item>QA Engineer</item>
-        <item>Technical Support Engineer</item>
-        <item>IT Specialist</item>
-        <item>DB Administrator</item>
-        <item>DB Support</item>
+        <item name="default">Select Position</item>
+        <item name="Android/ Mobile Dev">Android/ Mobile Dev</item>
+        <item name="Web Developer">Web Dev</item>
+        <item name="FullStack Web Developer">FullStack Web Dev</item>
+        <item name="FullStack Software Developer">FullStack Software Dev</item>
+        <item name="UIX Designer">UIX Designer</item>
+        <item name="QA Engineer">QA Engineer</item>
+        <item name="Technical Support Engineer">Technical Support Engineer</item>
+        <item name="IT Specialist">IT Specialist</item>
+        <item name="DB Administrator">DB Administrator</item>
+        <item name="Customer Support">Customer Support</item>
     </string-array>
+
 </resources>
