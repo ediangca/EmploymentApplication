@@ -26,7 +26,7 @@
         <View
             android:id="@+id/divider3"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="2dp"
             android:layout_margin="10dp"
             android:background="?attr/dividerHorizontal"
             android:backgroundTint="#03D9C4"
@@ -34,24 +34,45 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/lastName"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:hint="@string/hint_lastname"
-                android:maxLines="1" />
 
-            <EditText
-                android:id="@+id/firstName"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/hint_firstname"
-                android:maxLines="1" />
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hint_lastname"
+                    android:inputType="textCapWords"
+                    android:textSize="12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hint_firstname"
+                    android:inputType="textCapWords"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -70,45 +91,82 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Address"
-                android:gravity="left|top"
-                android:inputType="textMultiLine"
-                android:lines="8"
-                android:maxLines="8"
-                android:minLines="5" />
 
-            <EditText
-                android:id="@+id/city"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/hint_city"
-                android:maxLines="1" />
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|top"
+                    android:hint="@string/hint_address"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:maxLines="8"
+                    android:minLines="5"
+                    android:textSize="12sp"
+                    tools:ignore="RtlHardcoded" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hint_city"
+                    android:inputType="textCapWords"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/state"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="State"
-                    android:maxLines="2" />
+                    app:endIconMode="clear_text">
 
-                <EditText
-                    android:id="@+id/zip"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/state"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="State"
+                        android:inputType="textCapWords"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Zip code"
-                    android:maxLines="1" />
+                    app:endIconMode="clear_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/zip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="Zip code"
+                        android:inputType="number"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -127,31 +185,50 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/homePhone"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:hint="Home Phone"
-                android:inputType="phone"
-                android:maxLines="1" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
 
-            <EditText
-                android:id="@+id/cellPhone"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:hint="Cell Phone"
-                android:inputType="phone"
-                android:maxLines="1" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/homePhone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Home Phone"
+                    android:inputType="phone"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/emailAddress"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:hint="Email Address"
-                android:inputType="textEmailAddress" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cellPhone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Cell Phone"
+                    android:inputType="phone"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailAddress"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Email Address"
+                    android:inputType="textEmailAddress"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -164,21 +241,26 @@
                 android:id="@+id/titleSSS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:gravity="center"
                 android:text="SSS"
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/sssNo"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:hint="Social Security Number"
-                android:inputType="number"
-                android:maxLines="1" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sssNo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Social Security Number"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -195,7 +277,6 @@
                 android:layout_weight="1"
                 android:text="Are you a U.S Citizen?"
                 android:textColor="#000"
-                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -226,12 +307,10 @@
             <TextView
                 android:id="@+id/titlefelony"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Have you ever been convected of a felony?"
                 android:textColor="#000"
-                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -240,19 +319,19 @@
                 android:orientation="horizontal">
 
 
-                    <com.google.android.material.checkbox.MaterialCheckBox
-                        android:id="@+id/felonyYes"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="Yes"
-                        android:onClick="onCheckbox"/>
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/felonyYes"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckbox"
+                    android:text="Yes" />
 
-                    <com.google.android.material.checkbox.MaterialCheckBox
-                        android:id="@+id/felonyNo"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="No"
-                        android:onClick="onCheckbox" />
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/felonyNo"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckbox"
+                    android:text="No" />
 
 
             </LinearLayout>
@@ -267,12 +346,10 @@
             <TextView
                 android:id="@+id/titleDrugTest"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="If selected for employment are you willing to submit to a pre-employment drug screening test?"
                 android:textColor="#000"
-                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -280,19 +357,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                    <com.google.android.material.checkbox.MaterialCheckBox
-                        android:id="@+id/adikYes"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="Yes"
-                        android:onClick="onCheckbox"/>
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/adikYes"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckbox"
+                    android:text="Yes" />
 
-                    <com.google.android.material.checkbox.MaterialCheckBox
-                        android:id="@+id/adikNo"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="No"
-                        android:onClick="onCheckbox"/>
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/adikNo"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckbox"
+                    android:text="No" />
 
             </LinearLayout>
 
@@ -304,7 +381,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:background="@color/teal_200"
+            android:background="@drawable/common_button"
             android:text="@string/but_next"
             android:textColor="@color/white" />
 

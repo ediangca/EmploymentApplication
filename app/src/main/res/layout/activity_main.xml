@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -34,35 +35,37 @@
             android:id="@+id/lblMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold" />
 
+
+
         <androidx.appcompat.widget.AppCompatSpinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/position_list"
-            android:padding="10dp"
             android:id="@+id/positionList"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:entries="@array/position_list"
             />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:endIconMode="none">
+            app:endIconMode="none"
+            android:visibility="gone">
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
                 android:id="@+id/positionApply"
-                android:hint="@string/hint_position_applying_for"
-                android:maxLines="1"
+                android:hint="@string/hint_position_apply"
+                android:inputType="textCapWords"
                 android:textSize="12sp"
-                android:editable="false"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,10 +78,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:id="@+id/desiredSalary"
                 android:hint="@string/hint_desired_salary"
-                android:maxLines="1"
                 android:textSize="12sp"
                 android:inputType="numberDecimal"/>
 
@@ -93,7 +95,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:id="@+id/dateAvailable"
                 android:maxLines="1"
                 android:textSize="12sp"
@@ -101,17 +103,6 @@
                 android:inputType="date"/>
 
         </com.google.android.material.textfield.TextInputLayout>
-<!--
-
-        <Button
-            android:id="@+id/btnProceed"
-            android:layout_width="wrap_content"
-            android:background="@drawable/common_button"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"s
-            android:layout_gravity="center_horizontal"
-            android:text="Proceed"/>
--->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnProceed1"
@@ -122,29 +113,9 @@
             android:text="@string/but_proceed"
             android:background="@drawable/common_button"/>
 
-<!--
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnProceed2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/but_proceed"
-            android:background="@drawable/common_button"/>
--->
 
 
     </LinearLayout>
-
-<!--
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
--->
 
 
 

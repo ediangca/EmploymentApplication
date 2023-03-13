@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ThirdActivity"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:scrollbars="vertical"
-        tools:context=".ThirdActivity">
+        android:scrollbars="vertical">
 
 
         <LinearLayout
@@ -49,7 +50,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:hint="@string/hint_school_name"
-                    android:maxLines="1"
+                    android:inputType="textCapWords"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -66,7 +67,7 @@
                     android:background="@color/white"
                     android:gravity="left|top"
                     android:hint="@string/hint_address"
-                    android:inputType="textMultiLine"
+                    android:inputType="textMultiLine|textCapWords"
                     android:lines="8"
                     android:maxLines="8"
                     android:minLines="5"
@@ -88,7 +89,6 @@
                     android:background="@color/white"
                     android:hint="@string/hint_year_attended"
                     android:inputType="number"
-                    android:maxLines="1"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -102,9 +102,9 @@
                     android:id="@+id/degreeReceived"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="textCapWords"
                     android:background="@color/white"
                     android:hint="@string/hint_degree_received"
-                    android:maxLines="1"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +118,7 @@
                     android:id="@+id/major"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="textCapWords"
                     android:background="@color/white"
                     android:hint="@string/hint_major"
                     android:maxLines="1"
@@ -141,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/common_button"
-                android:text="@string/but_add_education"
+                android:text="@string/but_add"
                 android:textColor="@color/white" />
 
             <com.google.android.material.button.MaterialButton
@@ -150,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/common_button"
-                android:text="@string/but_edit_education"
+                android:text="@string/but_edit"
                 android:textColor="@color/white" />
 
             <com.google.android.material.button.MaterialButton
@@ -159,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/common_button"
-                android:text="@string/but_remove_education"
+                android:text="@string/but_remove"
                 android:textColor="@color/white" />
 
 
@@ -170,8 +171,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/linear_education_button">
+            app:layout_constraintTop_toBottomOf="@id/linear_education_button"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/titleEducationalBg"
@@ -192,8 +193,14 @@
                 android:nestedScrollingEnabled="true"
                 android:scrollbars="vertical"
                 android:textSize="12sp"
-                tools:ignore="NestedScrolling" />
+                tools:ignore="NestedScrolling"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                />
 
         </LinearLayout>
 
@@ -222,9 +229,9 @@
                     android:id="@+id/training_certificate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="textCapWords"
                     android:background="@color/white"
                     android:hint="@string/hint_others"
-                    android:maxLines="1"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>

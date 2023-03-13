@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "EmploymentApplication"
 include ':app'
+include ':module2'
+include ':app:loginapplication'
+include ':loginapplication'

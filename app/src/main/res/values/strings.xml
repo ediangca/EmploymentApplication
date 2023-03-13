@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="app_logo_description">App logo</string>
-    <string name="hint_position_applying_for">Position Applying For</string>
+    <string name="hint_position_apply">Position</string>
     <string name="hint_desired_salary">Desired Salary</string>
     <string name="hint_date_available_for_work">Date Available for Work</string>
     <string name="but_proceed">Proceed</string>
@@ -29,7 +29,7 @@
     <string name="hint_supervisor">Supervisor Name and Title</string>
     <string name="hint_reason_leaving">Reason for Leaving</string>
     <string name="hint_contact_them">May we contact them?</string>
-    <string name="but_add_education">Add</string>
+    <string name="but_add">Add</string>
     <string name="title_references">References</string>
     <string name="hint_name_references">Name</string>
     <string name="hint_title_references">Title</string>
@@ -42,12 +42,13 @@
     <string name="copyright">@2023 Copyright KodeGO Employment Application</string>
     <string name="but_browse_sign">Browse</string>
     <string name="title_education_background">List of Education Background</string>
-    <string name="but_edit_education">Edit</string>
-    <string name="but_remove_education">Remove</string>
+    <string name="but_edit">Edit</string>
+    <string name="but_remove">Remove</string>
     <string name="hint_others">Others</string>
+    <string name="title_list_of_reference">List of Reference</string>
 
     <string-array name="position_list">
-        <item name="default">Select Position</item>
+        <item name="default">Select Position to Apply for</item>
         <item name="Android/ Mobile Dev">Android/ Mobile Dev</item>
         <item name="Web Developer">Web Dev</item>
         <item name="FullStack Web Developer">FullStack Web Dev</item>

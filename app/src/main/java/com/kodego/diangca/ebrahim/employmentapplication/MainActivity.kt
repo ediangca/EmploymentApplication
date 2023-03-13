@@ -1,30 +1,27 @@
 package com.kodego.diangca.ebrahim.employmentapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
 import com.kodego.diangca.ebrahim.employmentapplication.databinding.ActivityMainBinding
-import java.text.DateFormat
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.util.Date
+import java.util.*
 import kotlin.properties.Delegates
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    lateinit var positionApply: String
-    var desiredSalary by Delegates.notNull<Double>()
-    var dateAvailable: Date? = null
+    private lateinit var positionApply: String
+    private var desiredSalary: Double = 0.0
+    private var dateAvailable: Date? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -41,16 +38,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
     }
 
     private fun positionListOnItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        binding.positionApply.setText(binding.positionList.selectedItem.toString())
         if(position == 0){
+            binding.positionApply.text = null
             Toast.makeText(this, "Please select a position first.", Toast.LENGTH_SHORT).show()
             return
         }
-        Toast.makeText(this, "Selected Position : ${parent!!.selectedItemId} - ${binding.positionList.selectedItem.toString()}", Toast.LENGTH_SHORT).show()
+        binding.positionApply.setText(binding.positionList.selectedItem.toString())
+//        Toast.makeText(this, "Selected Position : ${parent!!.selectedItemId} - ${binding.positionList.selectedItem.toString()}", Toast.LENGTH_SHORT).show()
     }
 
     private fun btnProceed1OnClickListener() {

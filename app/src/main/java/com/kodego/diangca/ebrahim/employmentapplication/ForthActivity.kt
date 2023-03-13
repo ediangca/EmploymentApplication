@@ -36,8 +36,8 @@ class ForthActivity : AppCompatActivity() {
             when (view.id) {
                 R.id.contactYes -> {
                     if (checked) {
-                        binding.contactNo.isChecked = true
-                        binding.contactYes.isChecked = false
+                        binding.contactYes.isChecked = true
+                        binding.contactNo.isChecked = false
                     } else {
                         binding.contactYes.isChecked = true
                         binding.contactNo.isChecked = false
@@ -45,11 +45,11 @@ class ForthActivity : AppCompatActivity() {
                 }
                 R.id.contactNo -> {
                     if (checked) {
-                        binding.contactYes.isChecked = false
                         binding.contactNo.isChecked = true
+                        binding.contactYes.isChecked = false
                     } else {
-                        binding.contactYes.isChecked = true
-                        binding.contactNo.isChecked = false
+                        binding.contactNo.isChecked = true
+                        binding.contactYes.isChecked = false
                     }
                 }
             }

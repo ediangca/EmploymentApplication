@@ -1,203 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
-    tools:context=".FifthActivity">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linear1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        tools:context=".FifthActivity">
 
-        <TextView
-            android:id="@+id/lblReferences"
+        <LinearLayout
+            android:id="@+id/linear1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_references"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@color/teal_200"
-            app:dividerThickness="5dp" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/reference_name"
+            <TextView
+                android:id="@+id/lblReferences"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:hint="@string/hint_name_references"
-                android:maxLines="1"
-                android:textSize="12sp" />
+                android:layout_height="wrap_content"
+                android:text="@string/title_references"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/references_title"
+            <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:hint="@string/hint_title_references"
-                android:maxLines="1"
-                android:textSize="12sp" />
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/teal_200"
+                app:dividerThickness="5dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/reference_company"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:hint="@string/hint_references_company"
-                android:maxLines="1"
-                android:textSize="12sp" />
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reference_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:hint="@string/hint_name_references"
+                    android:inputType="textCapWords"
+                    android:textSize="12sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/reference_phone"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:hint="@string/hint_references_phone"
-                android:maxLines="1"
-                android:inputType="phone"
-                android:textSize="12sp" />
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/references_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:hint="@string/hint_title_references"
+                    android:inputType="textCapWords"
+                    android:textSize="12sp" />
 
-        <com.google.android.material.button.MaterialButton
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/btnEducationAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:background="@color/teal_200"
-            android:text="@string/but_add_education"
-            android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ExpandableListView>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/certify"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:justificationMode="inter_word"
-            android:gravity="left"
-            android:text="@string/hint_certify" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reference_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:hint="@string/hint_references_company"
+                    android:inputType="textCapWords"
+                    android:textSize="12sp" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/authorize"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:justificationMode="inter_word"
-            android:gravity="left"
-            android:text="@string/hint_authorize" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/event"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:justificationMode="inter_word"
-            android:gravity="left"
-            android:text="@string/hint_event" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text">
 
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reference_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:hint="@string/hint_references_phone"
+                    android:inputType="phone"
+                    android:textSize="12sp" />
 
-    <LinearLayout
-        app:layout_constraintTop_toBottomOf="@id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/online_form_logo"
-            android:contentDescription="@string/app_logo_description" />
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/linear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lblSignature"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            app:layout_constraintTop_toBottomOf="@id/linear1"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="right"
+            >
 
-        <com.google.android.material.button.MaterialButton
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/btnBrowse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/teal_200"
-            android:text="@string/but_browse_sign"
-            android:textColor="@color/white" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReferenceAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_button"
+                android:text="@string/but_add"
+                android:textColor="@color/white"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReferenceEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/common_button"
+                android:text="@string/but_edit"
+                android:textColor="@color/white"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReferenceRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/common_button"
+                android:text="@string/but_remove"
+                android:textColor="@color/white"/>
 
-        <TextView
-            android:id="@+id/dateSignature"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearReference"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            app:layout_constraintTop_toBottomOf="@id/linear2"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/titleEducationalBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/title_list_of_reference"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/referenceList"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:choiceMode="singleChoice"
+                android:listSelector="@color/teal_200"
+                android:nestedScrollingEnabled="true"
+                android:scrollbars="vertical"
+                android:textSize="12sp"
+                tools:ignore="NestedScrolling" />
 
 
-    <TextView
-        android:id="@+id/copyright"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/copyright"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="16sp" />
+        </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/linearReference">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/certify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:justificationMode="inter_word"
+                android:paddingBottom="10dp"
+                android:text="@string/hint_certify" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/authorize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:justificationMode="inter_word"
+                android:paddingBottom="10dp"
+                android:text="@string/hint_authorize" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:justificationMode="inter_word"
+                android:text="@string/hint_event" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/app_logo_description"
+                android:src="@drawable/online_form_logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lblSignature"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBrowse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/common_button"
+                android:text="@string/but_browse_sign"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/dateSignature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/copyright"
+                android:textAlignment="center"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

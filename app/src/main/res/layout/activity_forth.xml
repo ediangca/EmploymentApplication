@@ -49,7 +49,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:hint="@string/hint_employer"
-                    android:maxLines="1"
+                    android:inputType="textCapWords"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -66,7 +66,6 @@
                     android:background="@color/white"
                     android:hint="@string/hint_date_employed"
                     android:inputType="date"
-                    android:maxLines="1"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -110,7 +109,6 @@
                     android:background="@color/white"
                     android:hint="@string/hint_pay_rate"
                     android:inputType="numberDecimal"
-                    android:maxLines="1"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -128,7 +126,6 @@
                     android:background="@color/white"
                     android:hint="@string/hint_to"
                     android:inputType="numberDecimal"
-                    android:maxLines="1"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -173,7 +170,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:hint="@string/hint_city"
-                    android:maxLines="1"
+                    android:inputType="textCapWords"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -200,7 +197,7 @@
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:hint="State"
-                    android:maxLines="2"
+                    android:inputType="textCapWords"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -218,7 +215,7 @@
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:hint="Zip code"
-                    android:maxLines="1"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -242,7 +239,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:hint="@string/hint_position"
-                    android:maxLines="1"
+                    android:inputType="textCapWords"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -258,7 +255,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:hint="@string/hint_duties_performed"
-                    android:maxLines="1"
+                    android:inputType="textCapWords"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -274,7 +271,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:hint="@string/hint_supervisor"
-                    android:maxLines="1"
+                    android:inputType="textCapWords"
                     android:textSize="12sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -316,7 +313,6 @@
                 android:layout_weight="1"
                 android:text="@string/hint_contact_them"
                 android:textColor="#000"
-                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -341,7 +337,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/teal_200"
+            android:background="@drawable/common_button"
             android:text="@string/but_next"
             android:textColor="@color/white"
             app:layout_constraintRight_toRightOf="parent"
