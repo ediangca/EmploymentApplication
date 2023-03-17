@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         Log.d("FROM REGISTER", data!!.getStringExtra("username").toString())
         Snackbar.make(
             binding.root,
-            "Registered ${data!!.getStringExtra("username")}",
+            "Hi  ${data!!.getStringExtra("firstname")}! \n Please wait for the confirmation of your Account",
             Snackbar.LENGTH_LONG
         ).show()
     }

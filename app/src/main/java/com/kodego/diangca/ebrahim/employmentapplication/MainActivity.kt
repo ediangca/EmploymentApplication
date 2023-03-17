@@ -1,5 +1,9 @@
 package com.kodego.diangca.ebrahim.employmentapplication
 
+/**
+Activity 8 A - Create a UI for the form shown
+* */
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.View

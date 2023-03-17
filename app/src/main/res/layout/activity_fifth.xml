@@ -210,15 +210,6 @@
                 android:contentDescription="@string/app_logo_description"
                 android:src="@drawable/online_form_logo" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/lblSignature"
-                android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBrowse"
                 android:layout_width="wrap_content"
@@ -231,6 +222,15 @@
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lblSignature"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dateSignature"

@@ -256,7 +256,6 @@ class ThirdActivity : AppCompatActivity() {
 
             // on below line hiding our keyboard.
             inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
-
         }
     }
 

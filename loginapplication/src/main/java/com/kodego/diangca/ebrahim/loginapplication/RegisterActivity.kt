@@ -36,6 +36,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val intent = Intent()
         intent.putExtra("username", binding.username.text.toString())
+        intent.putExtra("firstname", binding.firstName.text.toString())
         setResult(1, intent)
         finish()
 
