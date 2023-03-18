@@ -5,15 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
 import com.kodego.diangca.ebrahim.fragments.databinding.FragmentCBinding
-import java.text.SimpleDateFormat
-import java.util.*
+import com.kodego.diangca.ebrahim.fragments.databinding.FragmentChatBinding
 
-class CFragment : Fragment() {
+class ChatFragment : Fragment() {
 
-    private var _binding: FragmentCBinding? = null
+    private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +23,7 @@ class CFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentCBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentChatBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 

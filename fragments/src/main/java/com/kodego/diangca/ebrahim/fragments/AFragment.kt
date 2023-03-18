@@ -32,14 +32,14 @@ class AFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnNext.setOnClickListener {
+       /* binding.btnNext.setOnClickListener {
             var bundle = bundleOf("positionApplied" to "positionApplied",
                 "AFragment" to "aFragment",
                 "dateAvailable" to SimpleDateFormat("yyyy-MM-d").format(Date()).toString()
             )
 
             findNavController().navigate(R.id.action_firstFragment_to_secondFragment, bundle)
-        }
+        }*/
     }
 
     override fun onDestroyView() {

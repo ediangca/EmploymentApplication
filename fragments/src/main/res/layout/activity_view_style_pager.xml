@@ -6,27 +6,34 @@
     android:layout_height="match_parent"
     android:weightSum="12"
     android:orientation="vertical"
-    tools:context=".ViewPagerActivity">
-
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-
-        />
+    tools:context=".ViewPagerStyleActivity">
 
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="11"
+        android:layout_weight="10.5"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@color/white"
+        app:tabIconTint="@android:color/holo_blue_bright"
+        app:tabIndicatorColor="@android:color/holo_blue_bright"
+        app:tabTextAppearance="@style/CustomTabWidgetText"
+        app:tabSelectedTextAppearance="@style/CustomTabWidgetTextSelected"
+        app:tabTextColor="@android:color/holo_blue_bright"
+        app:tabSelectedTextColor="@android:color/holo_blue_dark"/>
+
+
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
