@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/app_name"
+            android:text="Activity 09 - App"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -38,7 +38,7 @@
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"
             android:text="LOGIN"
-            android:background="@drawable/common_button"/>
+            android:background="@drawable/danger_button"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRegister"
@@ -47,7 +47,7 @@
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"
             android:text="REGISTER"
-            android:background="@drawable/common_button"/>
+            android:background="@drawable/danger_button"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

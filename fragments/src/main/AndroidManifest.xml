@@ -10,16 +10,17 @@
         android:theme="@style/Theme.EmploymentApplication">
         <activity
             android:name=".ViewPagerStyleActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ViewPagerActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".ViewPagerActivity"
-            android:exported="false">
         </activity>
         <activity
             android:name=".HomeActivity"
@@ -29,11 +30,6 @@
             android:name=".MainActivity"
             android:exported="false">
 
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
 
         </activity>
     </application>

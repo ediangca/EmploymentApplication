@@ -53,20 +53,16 @@ class ThirdActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // DataBind ListView with items from ArrayAdapter
         educationListAdapter =
             ArrayAdapter(this, android.R.layout.simple_list_item_1, educationStringList)
-
-        // DataBind ListView with items from ArrayAdapter
         binding.educationList.adapter = educationListAdapter
 
-//        init()
+//      DataBind RecycleView with items from ArrayAdapter
         educationAdapter = EducationAdapter(educationList)
-
-
         binding.list.layoutManager = LinearLayoutManager(applicationContext)
         binding.list.adapter = educationAdapter
 //        binding.educationList.performItemClick(binding.educationList.selectedView, 0, 0);

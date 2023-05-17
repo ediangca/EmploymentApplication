@@ -9,28 +9,48 @@
     tools:context=".ViewPagerStyleActivity">
 
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10.5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:background="@color/white"
-        app:tabIconTint="@android:color/holo_blue_bright"
-        app:tabIndicatorColor="@android:color/holo_blue_bright"
+        android:layout_weight="1"
+        android:background="@drawable/tab_menu_style"
+        android:contentDescription="@string/app_name"
+        app:tabIconTint="@color/white"
+        app:tabIndicatorColor="@color/color1"
+        app:tabIndicatorGravity="top"
         app:tabTextAppearance="@style/CustomTabWidgetText"
         app:tabSelectedTextAppearance="@style/CustomTabWidgetTextSelected"
-        app:tabTextColor="@android:color/holo_blue_bright"
-        app:tabSelectedTextColor="@android:color/holo_blue_dark"/>
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/color1"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"/>
+
+    <FrameLayout
+        android:id="@+id/mainFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_menu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/menu_style"
+        app:itemIconSize="38dp"
+        app:itemIconTint="@color/white"
+        app:itemActiveIndicatorStyle="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+        app:itemTextAppearance="@style/CustomTabWidgetText"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/main_menu"
+        app:compatShadowEnabled="true"/>
+
 
 
 

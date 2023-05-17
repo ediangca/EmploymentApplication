@@ -7,6 +7,12 @@
     <color name="secondary">#388BC5</color>
     <color name="secondary_variant">#45ADF6</color>
 
+    <color name="color1">#296ACC</color>
+    <color name="color2">#47ABFF</color>
+    <color name="color3">#5BC8FF</color>
+    <color name="color4">#97E8FF</color>
+    <color name="color5">#489BF2</color>
+
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

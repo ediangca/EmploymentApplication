@@ -3,32 +3,53 @@ package com.kodego.diangca.ebrahim.loginapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.inputmethod.InputMethodManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
-import com.kodego.diangca.ebrahim.loginapplication.adapter.StudentAdapter
+import android.util.Log
+import android.view.MenuItem
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.kodego.diangca.ebrahim.loginapplication.adapter.BorrowerAdapter
 import com.kodego.diangca.ebrahim.loginapplication.databinding.ActivityMainBinding
-import com.kodego.diangca.ebrahim.loginapplication.model.Student
+import com.kodego.diangca.ebrahim.loginapplication.model.Book
+import com.kodego.diangca.ebrahim.loginapplication.model.Borrower
+import com.kodego.diangca.ebrahim.loginapplication.model.Transaction
 import kotlin.collections.ArrayList
 
-class   MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var studentAdapter: StudentAdapter
-    private var students: ArrayList<Student> = ArrayList()
+    private lateinit var userAdapter: BorrowerAdapter
+    private var librarians: ArrayList<Borrower> = ArrayList()
 
-    fun init() {
-        students.add(Student("Sacar", "Diangca", R.drawable.profile_icon))
-        students.add(Student("Naima", "Diangca", R.drawable.profile_icon))
-        students.add(Student("Jaharah", "Diangca", R.drawable.profile_3))
-        students.add(Student("Asliah", "Diangca", R.drawable.profile_2))
-        students.add(Student("Ebrahin", "Diangca", R.drawable.profile_1))
-        students.add(Student("Rose Marie", "Diangca", R.drawable.profile_2))
-//        students.add(Student("Ebmarie", "Diangca", R.drawable.profile_4))
-        students.add(Student("Mohammad Rafi", "Diangca", R.drawable.profile_5))
-        students.add(Student("Farhana", "Diangca", R.drawable.profile_4))
+
+    var transactions: ArrayList<Transaction> = ArrayList()
+    var books: ArrayList<Book> = ArrayList()
+    var borrowers: ArrayList<Borrower> = ArrayList()
+
+
+    private lateinit var mainFrame: FragmentTransaction
+    private lateinit var homeFragment: HomeFragment
+    private lateinit var bookFragment: BookFragment
+    private lateinit var borrowerFragment: BorrowerFragment
+
+    private fun initBooks() {
+        books.add(Book("English-1", "Basic English"))
+        books.add(Book("Math-1", "Algebra"))
+        books.add(Book("Math-2", "Trigonometry"))
+        books.add(Book("Math-3", "Calculus"))
+        books.add(Book("Science-1", "Geology"))
+        books.add(Book("Science-2", "Biology"))
+        books.add(Book("Science-3", "Chemistry"))
+        books.add(Book("Science-4", "Physics"))
+        books.add(Book("Filipino-1", "Basic Filipino"))
+
+        showListBook()
+    }
+
+    private fun showListBook() {
+        for (book in books) {
+            println(book.showDetails())
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,52 +58,74 @@ class   MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnLogout.setOnClickListener {
-            btnLogoutClickListener()
-        }
-        binding.btnAdd.setOnClickListener {
-            btnAddClickListener(this.currentFocus!!)
-        }
-        init()
-        studentAdapter = StudentAdapter(this, students)
+        iniComponent()
+        initBooks()
 
-        binding.list.layoutManager = LinearLayoutManager(applicationContext)
-        binding.list.adapter = studentAdapter
     }
 
-    private fun btnAddClickListener(view: View?) {
-        var firstName = binding.firstName.text.toString()
-        var lastName = binding.lastName.text.toString()
+    private fun iniComponent() {
 
-        if (firstName.isEmpty() || lastName.isEmpty()) {
-            Snackbar.make(binding.root, "Please check empty fields.", Snackbar.LENGTH_SHORT).show()
-            return
-        }
-        students.add(Student(firstName, lastName, R.drawable.profile_icon))
-        studentAdapter.notifyDataSetChanged()
-        Snackbar.make(binding.root, "Data has been successfully added.", Snackbar.LENGTH_SHORT)
-            .show()
-        binding.firstName.setText("")
-        binding.lastName.setText("")
+        homeFragment = HomeFragment(this)
+        bookFragment = BookFragment(this)
+        borrowerFragment = BorrowerFragment(this)
 
-        // on below line checking if view is not null.
-        if (view!=null) {
-            // on below line we are creating a variable
-            // for input manager and initializing it.
-            val inputMethodManager =
-                getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        mainFrame = supportFragmentManager.beginTransaction()
+        mainFrame.replace(R.id.mainFrameLayout, HomeFragment(this))
+        mainFrame.commit()
 
-            // on below line hiding our keyboard.
-            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 
-            binding.list.requestFocus()
+        binding.mainNav.setOnItemSelectedListener {
+            mainNavOnItemSelectedListener(it)
         }
 
     }
 
-    private fun btnLogoutClickListener() {
+    private fun mainNavOnItemSelectedListener(it: MenuItem): Boolean {
+        Log.d("MENU ITEM", "ID: ${it.itemId}")
+        when (it.itemId) {
+            R.id.navHome -> {
+                openFragment(homeFragment)
+                return true
+            }
+            R.id.navBook -> {
+                openFragment(bookFragment)
+                return true
+            }
+            R.id.navSettings -> {
+                openFragment(borrowerFragment)
+                return true
+            }
+            R.id.navLogout -> {
+                logout()
+                return true
+            }
+        }
+        return false
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        mainFrame = supportFragmentManager.beginTransaction()
+        mainFrame.replace(R.id.mainFrameLayout, fragment);
+        mainFrame.addToBackStack(null);
+        mainFrame.commit();
+    }
+
+    private fun logout() {
         var nextForm = Intent(this, MenuActivity::class.java)
         startActivity(Intent(nextForm))
         finish()
     }
+
+    fun removeBookToMain(book: Book) {
+        Log.d("REMOVE_BOOK", "REMOVED ${book.bookName} - ${book.description}")
+        books.remove(book)
+        bookFragment.clearFields()
+    }
+
+    fun removeBorrowerToMain(borrower: Borrower) {
+        Log.d("REMOVE_BOOK", "REMOVED ${borrower.firstName} - ${borrower.lastName}")
+        borrowers.remove(borrower)
+        borrowerFragment.clearFields()
+    }
+
 }
